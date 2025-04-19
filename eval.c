@@ -45,6 +45,8 @@ int eval(void){
 	int val;
 
 	node = parse();
+	if(!node) return 0;
+
 	val = do_virtual(node);
 
 	free_alloclist();
