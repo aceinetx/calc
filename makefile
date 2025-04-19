@@ -3,7 +3,7 @@ CFLAGS = -std=c90 -Wall -Wextra -Wpedantic -ggdb
 all: calc
 
 clean:
-	rm *.o calc
+	rm *.o calc -rf
 
 calc.o: calc.c lex.h parser.h eval.h
 	gcc -c -o calc.o $(CFLAGS) calc.c
