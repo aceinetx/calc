@@ -32,21 +32,6 @@ static struct token lex_number(void){
 	return tok;
 }
 
-struct token lex_peek(int fwd){
-	unsigned int old_pos;
-	int i;
-	struct token tok;
-
-	old_pos = lex_pos;
-
-	for(i=0; i<fwd; i++){
-		tok = lex_next();
-	}
-
-	lex_pos = old_pos;
-	return tok;
-}
-
 struct token lex_next(void){
 	unsigned int lex_len;
 	struct token tok;	
