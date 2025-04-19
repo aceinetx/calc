@@ -9,7 +9,7 @@ static char is_digit(char c){
 	return c >= '0' && c <= '9';
 }
 
-static struct token lex_number(){
+static struct token lex_number(void){
 	unsigned int lex_len;
 	struct token tok;	
 
@@ -47,7 +47,7 @@ struct token lex_peek(int fwd){
 	return tok;
 }
 
-struct token lex_next(){
+struct token lex_next(void){
 	unsigned int lex_len;
 	struct token tok;	
 

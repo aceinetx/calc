@@ -22,6 +22,6 @@ struct node {
 	char binop_type;
 };
 
-struct node* parse();
+struct node* parse(void);
 
 #endif

@@ -2,6 +2,6 @@
 #define ALLOCLIST_H
 
 void add_alloclist(void* ptr);
-void free_alloclist();
+void free_alloclist(void);
 
 #endif

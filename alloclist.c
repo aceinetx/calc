@@ -18,7 +18,7 @@ void add_alloclist(void* ptr){
 	alloclist_capacity += sizeof(void*);
 }
 
-void free_alloclist(){
+void free_alloclist(void){
 	unsigned int i;
 
 	if(!alloclist) return;

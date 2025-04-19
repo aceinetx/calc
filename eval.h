@@ -1,6 +1,6 @@
 #ifndef EVAL_H
 #define EVAL_H
 
-int eval();
+int eval(void);
 
 #endif

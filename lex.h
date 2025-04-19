@@ -20,7 +20,7 @@ struct token {
 
 extern char* lex_in;
 
-struct token lex_next();
+struct token lex_next(void);
 struct token lex_peek(int fwd);
 
 #endif

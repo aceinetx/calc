@@ -6,12 +6,12 @@
 
 static struct token tok;
 
-static struct node *parse_number();
-static struct node *parse_factor();
-static struct node *parse_term();
-static struct node *parse_expression();
+static struct node *parse_number(void);
+static struct node *parse_factor(void);
+static struct node *parse_term(void);
+static struct node *parse_expression(void);
 
-static struct node *parse_number(){
+static struct node *parse_number(void){
 	struct node *node;
 
 	if(tok.type != TOKEN_NUMBER){
@@ -30,7 +30,7 @@ static struct node *parse_number(){
 	return node;
 }
 
-static struct node *parse_factor(){
+static struct node *parse_factor(void){
 	if(tok.type == TOKEN_LPAREN){
 		struct node *expr;
 		tok = lex_next();
@@ -50,7 +50,7 @@ static struct node *parse_factor(){
 	return parse_number();
 }
 
-static struct node *parse_term(){
+static struct node *parse_term(void){
 	struct token op;
 	struct node *left_inner, *left, *right;
 	
@@ -91,7 +91,7 @@ static struct node *parse_term(){
 	return left_inner;
 }
 
-static struct node *parse_expression(){
+static struct node *parse_expression(void){
 	struct node *left_inner, *left, *right;
 	struct token op;
 
@@ -133,7 +133,7 @@ static struct node *parse_expression(){
 	return left_inner;
 }
 
-struct node* parse(){
+struct node* parse(void){
 	tok = lex_next();
 	while(tok.type != TOKEN_EOF){
 		return parse_expression();

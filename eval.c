@@ -40,7 +40,7 @@ int do_virtual(struct node *node){
 	return 0;
 }
 
-int eval(){
+int eval(void){
 	struct node *node;
 	int val;
 
