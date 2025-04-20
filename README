@@ -1,3 +1,4 @@
 calc
+====
 
-An old-style ANSI C lexer, parser, and evaluator for mathematical expressions
+An old-style ANSI C lexer, parser, and evaluator for mathematical expressions.
