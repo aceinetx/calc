@@ -15,7 +15,7 @@ enum {
 
 struct token {
 	char type;
-	int value;	
+	long value;	
 };
 
 extern char* lex_in;

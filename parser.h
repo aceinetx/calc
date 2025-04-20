@@ -15,7 +15,7 @@ enum {
 
 struct node {
 	char type;
-	int value;
+	long value;
 
 	struct node *left;
 	struct node *right;

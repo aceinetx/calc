@@ -2,17 +2,17 @@
 #include "parser.h"
 #include "alloclist.h"
 
-int do_virtual(struct node *node);
-int do_num(struct node *node);
-int do_binop(struct node *node);
+long do_virtual(struct node *node);
+long do_num(struct node *node);
+long do_binop(struct node *node);
 
-int do_num(struct node *node){
+long do_num(struct node *node){
 	return node->value;
 }
 
-int do_binop(struct node *node){
-	int left = do_virtual(node->left);
-	int right = do_virtual(node->right);
+long do_binop(struct node *node){
+	long left = do_virtual(node->left);
+	long right = do_virtual(node->right);
 
 	switch(node->binop_type){
 		case BINOP_ADD:
@@ -29,7 +29,7 @@ int do_binop(struct node *node){
 	return 0;
 }
 
-int do_virtual(struct node *node){
+long do_virtual(struct node *node){
 	switch(node->type){
 		case NODE_NUMBER:
 			return do_num(node);
@@ -40,9 +40,9 @@ int do_virtual(struct node *node){
 	return 0;
 }
 
-int eval(void){
+long eval(void){
 	struct node *node;
-	int val;
+	long val;
 
 	node = parse();
 	if(!node) return 0;

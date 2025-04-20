@@ -29,7 +29,7 @@ int main(int argc, char** argv){
 	}
 
 	lex_in = buf;
-	printf("%d\n", eval());
+	printf("%ld\n", eval());
 
 	if(argc > 1) fclose(fp);
 	return 0;
