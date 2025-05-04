@@ -15,8 +15,13 @@ static struct node *parse_number(void){
 	struct node *node;
 
 	if(tok.type != TOKEN_NUMBER){
-		printf("expected number\n");
-		return NULL;
+		if(tok.type == TOKEN_MINUS){
+			tok = lex_next();
+			tok.value = -tok.value;
+		} else {
+			printf("expected number\n");
+			return NULL;
+		}
 	}
 
 	node = malloc(sizeof(struct node));
