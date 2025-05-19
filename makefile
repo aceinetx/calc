@@ -1,4 +1,4 @@
-CFLAGS = -std=c90 -Wall -Wextra -Wpedantic -ggdb
+CFLAGS = -std=c90 -Wall -Wextra -Wpedantic -ggdb -Oz
 CC = cc
 
 all: calc
@@ -6,7 +6,7 @@ all: calc
 clean:
 	rm *.o calc -rf
 
-calc.o: calc.c lex.h parser.h eval.h
+calc.o: calc.c lex.h eval.h
 	$(CC) -c -o calc.o $(CFLAGS) calc.c
 
 lex.o: lex.c lex.h
